@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv('DISCORD_TOKEN')
-FILE_NAME = "timetable.txt"
+FILE_NAME = "timetable.csv"
 HOURS_PER_DAY = 24
 DAYS_PER_WEEK = 5
 
