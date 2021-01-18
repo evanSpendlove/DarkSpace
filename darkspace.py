@@ -18,9 +18,9 @@ bot = commands.Bot(command_prefix="!")
 def readTimetable(timetable):
     with open(FILE_NAME, 'r') as f:
         classes = f.read().strip().split('\n')
-    for c in classes:
-        day, hour, module, link = c.split(',')
-        timetable[int(day)][int(hour)] = (module, link)
+        for c in classes:
+            day, hour, module, link = c.split(',')
+            timetable[int(day)][int(hour)] = (module, link)
     return timetable
 
 def search(day, hour):
@@ -35,7 +35,7 @@ def formatMessage(details, search=False):
         if search:
             return "You've got no more class today, time to game!"
         else:
-            return "You've got no class right now, use !nextClass to find your next class today."
+            return "You've got no class right now, use \"!nextClass\" to find your next class today."
     else:
         return f"You've got a class for {details[0]}! Here's the link: {details[1]}"
 
@@ -59,7 +59,6 @@ async def nextClass(ctx):
 @bot.event
 async def on_ready():
     readTimetable(timetable)
-    print(timetable)
     print(f'{bot.user} has connected to Discord!')
 
 bot.run(TOKEN)
