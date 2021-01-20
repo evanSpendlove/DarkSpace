@@ -2,8 +2,20 @@
 A Discord bot for getting the link to your next online class.
 
 # Requirements
-- Python 3.6+
-- Discord library
+Can be installed using `pip install -r requirements.txt`
+
+- Python 3.0+
+- Discord.py
+- python-dotenv
+
+# Running in Docker
+Start DarkSpace: `bash start.sh` or `./start`
+Stop DarkSpace: `bash stop.sh` or `./stop`
+    -> Can remove the docker container using -f flag with `stop.sh`
+
+# TODO:
+- Add checks in bash script for docker being installed and install and run it if
+  it isn't.
 
 # Usage
 To add your own timetable and classroom links, you can create a "timetable.csv"
